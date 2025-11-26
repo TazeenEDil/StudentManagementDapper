@@ -24,4 +24,4 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Run Tests
-        run: dotnet test StudentManagementDapper.csproj --configuration Release --no-build --verbosity normal
+        run: dotnet test StudentManagementDapper --configuration Release --no-build --verbosity normal
