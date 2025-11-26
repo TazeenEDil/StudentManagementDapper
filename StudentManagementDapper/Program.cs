@@ -18,6 +18,7 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseRouting();
 
+// Mapping
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Students}/{action=Index}/{id?}");
