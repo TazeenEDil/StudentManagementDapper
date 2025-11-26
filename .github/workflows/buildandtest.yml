@@ -1,0 +1,29 @@
+name: .NET Student Management Dapper CI/CD
+
+on:
+  push:
+    branches: [ "master", "assignment3-Day1" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+    
+    - name: Restore dependencies
+      run: dotnet restore StudentManagementDapper/StudentManagementDapper.csproj
+    
+    - name: Build
+      run: dotnet build StudentManagementDapper/StudentManagementDapper.csproj --configuration Release --no-restore
+    
+    - name: Test
+      run: dotnet test StudentManagementDapper/StudentManagementDapper.csproj --configuration Release --no-build --verbosity normal
+     
+  
