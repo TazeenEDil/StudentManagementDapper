@@ -1,0 +1,61 @@
+﻿@model StudentManagementDapper.Models.Student
+
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<style>
+    body { font-family: Arial; background: #f5f7fa; padding: 20px; }
+    h2 { margin-bottom: 15px; }
+    form { width: 400px; background: white; padding: 20px; border-radius: 6px; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input {
+        width: 100%; padding: 8px; margin-top: 5px;
+        border: 1px solid #ccc; border-radius: 4px;
+    }
+    .btn-save {
+        margin-top: 15px;
+        background: #028a0f;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 4px;
+    }
+    .btn-save:hover { background: #026d0c; }
+    .back { display: inline-block; margin-top: 10px; }
+</style>
+
+<h2>Create Student</h2>
+
+<form asp-action="Create" method="post">
+
+    <label>Name</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name" style="color:red"></span>
+
+    <label>Email</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email" style="color:red"></span>
+
+    <label>Registration Number</label>
+    <input asp-for="RegistrationNumber" />
+    <span asp-validation-for="RegistrationNumber" style="color:red"></span>
+
+    <label>Date of Birth</label>
+    <input asp-for="DateOfBirth" type="date" />
+    <span asp-validation-for="DateOfBirth" style="color:red"></span>
+
+    <label>Department</label>
+    <input asp-for="Department" />
+    <span asp-validation-for="Department" style="color:red"></span>
+
+    <button class="btn-save" type="submit">Save</button>
+
+    <a href="/Students" class="back">← Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
