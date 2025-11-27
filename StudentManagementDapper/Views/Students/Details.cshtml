@@ -1,0 +1,47 @@
+﻿@model StudentManagementDapper.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<style>
+    body {
+        font-family: Arial;
+        background: #f5f7fa;
+        padding: 20px;
+    }
+
+    .card {
+        width: 400px;
+        padding: 20px;
+        background: white;
+        border-radius: 6px;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .item {
+        margin: 8px 0;
+    }
+
+    .back {
+        display: block;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="card">
+    <div class="title">Student Details</div>
+
+    <div class="item"><b>Name:</b> @Model.Name</div>
+    <div class="item"><b>Email:</b> @Model.Email</div>
+    <div class="item"><b>Reg #:</b> @Model.RegistrationNumber</div>
+    <div class="item"><b>DOB:</b> @Model.DateOfBirth.ToString("yyyy-MM-dd")</div>
+    <div class="item"><b>Department:</b> @Model.Department</div>
+
+    <a class="back" href="/Students">← Back</a>
+</div>
