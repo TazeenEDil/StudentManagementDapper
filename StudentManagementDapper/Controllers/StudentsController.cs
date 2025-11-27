@@ -2,7 +2,7 @@
 using StudentManagementDapper.Interfaces;
 using StudentManagementDapper.Models;
 
-namespace StudentManagement.Controllers
+namespace StudentManagementDapper.Controllers
 {
     public class StudentsController : Controller
     {
